@@ -1,12 +1,17 @@
 import Main.Properties
+import org.slf4j.LoggerFactory
 import java.io.File
 
 class Manager(properties: Properties) {
+    private val logger = LoggerFactory.getLogger(javaClass)
+
     private val pathForInputLogs = properties.pathForInputLogs
     private val pathForOutputFiles = properties.pathForOutputFiles
     final var fileNameLength = 20
 
     fun start(): Int {
+
+        logger.info("Start program")
 
         if (!inputDataChecker(pathForInputLogs, pathForOutputFiles)) {
             return -1

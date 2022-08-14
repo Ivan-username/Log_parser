@@ -1,13 +1,10 @@
-import Main.Reader
+import Main.Properties
 import org.junit.jupiter.api.Test
-
-import org.junit.jupiter.api.Assertions.*
 
 internal class MainKtTest {
 
     @Test
     fun main() {
-        val app = Reader();
-        app.reader()
+        Manager(Properties("text.txt", System.getProperty("java.io.tmpdir"))).start()
     }
 }
